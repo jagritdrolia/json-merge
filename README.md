@@ -13,3 +13,6 @@ Input form
 	It is merging the file in O(N * no_of_files). 
 	I am scanning each file once and store the key and value. 
 	If in next file I am getting the same key I am appending that key to the same key.
+	
+* Solution is generic and it will work with anytype of key u pass. 
+* It will also support non English Character
