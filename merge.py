@@ -18,6 +18,7 @@ while os.path.exists(folder_path + file_prefix + str(i) + '.json'):
     i = i+1
 
 all_data = {}
+j = 1;
 for file in input_filenames:
     with open(file, "r") as f:
         data = json.load(f)
@@ -26,8 +27,9 @@ for file in input_filenames:
             all_data[key] += data[key]
         else:
             all_data[key] = data[key]
-with open(output_file_prefix + '.json', "w") as outfile:
-    json.dump(all_data, outfile)
-
-statinfo = os.stat('result.json')
-print(statinfo.st_size)
+        file_size = sys.getsizeof(all_data)
+        if int(file_size) > int(max_file_size) - 30:
+            with open(output_file_prefix + str(j) + '.json', "w") as outfile:
+                json.dump(all_data, outfile)
+            j = j + 1
+            all_data = {}
