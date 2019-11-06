@@ -8,6 +8,10 @@ Input form
 * Enter the prefix of your output file: result
 * Enter the max file size in bytes: 1022
 
+Output form
+
+* Output will be files with suffix as their no and file size will not exceed the max_size of the file
+
 * Algorithmic Complexity of algorithm 
 
 	It is merging the file in O(N * no_of_files). 
